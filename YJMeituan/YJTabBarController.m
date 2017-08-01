@@ -8,7 +8,7 @@
 
 #import "YJTabBarController.h"
 
-@interface YJTabBarController ()
+@interface YJTabBarController () <UITabBarDelegate>
 
 @end
 
@@ -17,21 +17,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self addController];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)addController{
+    UIViewController *con1 = [[UIViewController alloc]init];
+    [self addChildViewControllerWithController:con1 title:@"首页" imgName:@"icon_tabbar_mine" selectImgName:@"icon_tabbar_mine_selected"];
+    
+    UIViewController *con2 = [[UIViewController alloc]init];
+    [self addChildViewControllerWithController:con2 title:@"商家" imgName:@"icon_tabbar_merchant_normal" selectImgName:@"icon_tabbar_merchant_selected"];
+    
+    
+    UIViewController *con3 = [[UIViewController alloc]init];
+    [self addChildViewControllerWithController:con3 title:@"上门" imgName:@"icon_tabbar_onsite" selectImgName:@"icon_tabbar_onsite_selected"];
+    
+    UIViewController *con4 = [[UIViewController alloc]init];
+    [self addChildViewControllerWithController:con4 title:@"我的" imgName:@"icon_tabbar_mine" selectImgName:@"icon_tabbar_mine_selected"];
+    
+
+    UIViewController *con5 = [[UIViewController alloc]init];
+    [self addChildViewControllerWithController:con5 title:@"更多" imgName:@"icon_tabbar_misc" selectImgName:@"icon_tabbar_misc_selected"];
 }
 
-/*
-#pragma mark - Navigation
+- (void)addChildViewControllerWithController:(UIViewController*)controller title:(NSString*)title imgName:(NSString *)imgName selectImgName:(NSString*)selectedImgName{
+    controller.title = title;
+    controller.tabBarItem.image =[[UIImage imageNamed:imgName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    controller.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImgName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    [self addChildViewController:controller];
 }
-*/
 
 @end
