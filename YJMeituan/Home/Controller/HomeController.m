@@ -8,11 +8,15 @@
 
 #import "HomeController.h"
 #import "HomeMenuCell.h"
+#import "YJDiscountModel.h"
 
 @interface HomeController () <UITableViewDelegate,UITableViewDataSource,MenuCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableview;
 @property (nonatomic, strong) NSMutableArray *menuArray;
+
+//存放数据数组
+@property (nonatomic, strong) NSMutableArray *discountArray;
 @end
 
 @implementation HomeController
@@ -22,7 +26,31 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self.view addSubview:self.tableview];
     
-
+    //抢购数据
+    NSString *url = [[GetUrlString sharedManager] urlWithRushBuy];
+    [NetWrok getDataFromURL:url paraments:nil success:^(id response) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    //折扣数据
+    NSString *discountUrl = [[GetUrlString sharedManager] urlWithDiscount];
+    [NetWrok getDataFromURL:discountUrl paraments:nil success:^(id response) {
+        NSMutableArray *array = response[@"data"];
+        
+        [self.discountArray removeAllObjects];
+        for (NSDictionary *dict in array) {
+            NSLog(@"折扣--%@",dict);
+            YJDiscountModel *discountModel = [YJDiscountModel mj_objectWithKeyValues:dict];
+            NSLog(@"%@",discountModel);
+            [self.discountArray addObject:discountModel];
+        }
+        
+        [self.tableview reloadData];
+    } failure:^(NSError *error) {
+        
+    }];
 }
 #pragma mark - menu代理方法
 - (void)menuButtonClickedAtIndex:(NSInteger)index{
@@ -47,6 +75,12 @@
     return _menuArray;
 }
 
+- (NSMutableArray *)discountArray{
+    if (!_discountArray) {
+        _discountArray = [@[] mutableCopy];
+    }
+    return _discountArray;
+}
 #pragma mark - tableview代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -67,7 +101,6 @@
             cell.delegate = self;
             
         }
-        
         return cell;
     }else{
         static NSString *use = @"menu";
@@ -84,6 +117,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
         return 180;
+    }else if(indexPath.row == 1){
+        return 120;
     }else{
         return 70;
     }

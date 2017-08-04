@@ -1297,15 +1297,12 @@
 		21015AF51F3072E4002D6065 /* icon_tabbar_misc_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 210155E81F3072E3002D6065 /* icon_tabbar_misc_selected@2x.png */; };
 		21015AF61F3072E4002D6065 /* icon_tabbar_onsite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 210155E91F3072E3002D6065 /* icon_tabbar_onsite@2x.png */; };
 		21015AF71F3072E4002D6065 /* icon_tabbar_onsite_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 210155EA1F3072E3002D6065 /* icon_tabbar_onsite_selected@2x.png */; };
-		217EBD2E1F31658800727646 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217EBD2B1F31658800727646 /* HomeController.m */; };
-		217EBD2F1F31658800727646 /* YJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217EBD2D1F31658800727646 /* YJTabBarController.m */; };
 		2193BDDB1F31BF2C0025ACF3 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD51F31BF2C0025ACF3 /* city.plist */; };
 		2193BDDC1F31BF2C0025ACF3 /* citydata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD61F31BF2C0025ACF3 /* citydata.plist */; };
 		2193BDDD1F31BF2C0025ACF3 /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD71F31BF2C0025ACF3 /* citydict.plist */; };
 		2193BDDE1F31BF2C0025ACF3 /* menuData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD81F31BF2C0025ACF3 /* menuData.plist */; };
 		2193BDDF1F31BF2C0025ACF3 /* MineInformationData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD91F31BF2C0025ACF3 /* MineInformationData.plist */; };
 		2193BDE01F31BF2C0025ACF3 /* MoreData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDDA1F31BF2C0025ACF3 /* MoreData.plist */; };
-		2193BDE51F31C8170025ACF3 /* HomeMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2193BDE41F31C8170025ACF3 /* HomeMenuCell.m */; };
 		21D571861F28789F00116A16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D571851F28789F00116A16 /* main.m */; };
 		21D571891F28789F00116A16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D571881F28789F00116A16 /* AppDelegate.m */; };
 		21D5718F1F28789F00116A16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D5718D1F28789F00116A16 /* Main.storyboard */; };
@@ -1314,9 +1311,14 @@
 		21D5719F1F28789F00116A16 /* YJMeituanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D5719E1F28789F00116A16 /* YJMeituanTests.m */; };
 		21D571AA1F28789F00116A16 /* YJMeituanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D571A91F28789F00116A16 /* YJMeituanUITests.m */; };
 		21D571B81F287AF600116A16 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21D571B71F287AF600116A16 /* Property List.plist */; };
-		21F4D2FE1F340DA7009031AC /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D2FD1F340DA7009031AC /* MenuButton.m */; };
 		21F4D3031F343AF7009031AC /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D3011F343AF7009031AC /* CommonTool.m */; };
 		21F4D3061F343B23009031AC /* NetWrok.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D3051F343B23009031AC /* NetWrok.m */; };
+		21F4D3091F34648B009031AC /* GetUrlString.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D3081F34648B009031AC /* GetUrlString.m */; };
+		21F4D3171F346E07009031AC /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D30C1F346E07009031AC /* HomeController.m */; };
+		21F4D3181F346E07009031AC /* YJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D30E1F346E07009031AC /* YJTabBarController.m */; };
+		21F4D3191F346E07009031AC /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D3131F346E07009031AC /* MenuButton.m */; };
+		21F4D31A1F346E07009031AC /* HomeMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D3161F346E07009031AC /* HomeMenuCell.m */; };
+		21F4D31D1F346EC0009031AC /* YJDiscountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D31C1F346EC0009031AC /* YJDiscountModel.m */; };
 		D0FFF3D4246500063E5F65EB /* libPods-YJMeituan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CF8D70FBC55BAB4D97BA2A /* libPods-YJMeituan.a */; };
 /* End PBXBuildFile section */
 
@@ -2630,18 +2632,12 @@
 		210155E91F3072E3002D6065 /* icon_tabbar_onsite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_onsite@2x.png"; sourceTree = "<group>"; };
 		210155EA1F3072E3002D6065 /* icon_tabbar_onsite_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_onsite_selected@2x.png"; sourceTree = "<group>"; };
 		217EBD281F31571700727646 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		217EBD2A1F31658800727646 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
-		217EBD2B1F31658800727646 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
-		217EBD2C1F31658800727646 /* YJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJTabBarController.h; sourceTree = "<group>"; };
-		217EBD2D1F31658800727646 /* YJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJTabBarController.m; sourceTree = "<group>"; };
 		2193BDD51F31BF2C0025ACF3 /* city.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = city.plist; sourceTree = "<group>"; };
 		2193BDD61F31BF2C0025ACF3 /* citydata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydata.plist; sourceTree = "<group>"; };
 		2193BDD71F31BF2C0025ACF3 /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
 		2193BDD81F31BF2C0025ACF3 /* menuData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menuData.plist; sourceTree = "<group>"; };
 		2193BDD91F31BF2C0025ACF3 /* MineInformationData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MineInformationData.plist; sourceTree = "<group>"; };
 		2193BDDA1F31BF2C0025ACF3 /* MoreData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MoreData.plist; sourceTree = "<group>"; };
-		2193BDE31F31C8170025ACF3 /* HomeMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMenuCell.h; sourceTree = "<group>"; };
-		2193BDE41F31C8170025ACF3 /* HomeMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMenuCell.m; sourceTree = "<group>"; };
 		21D571811F28789F00116A16 /* YJMeituan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJMeituan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D571851F28789F00116A16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21D571871F28789F00116A16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -2657,12 +2653,22 @@
 		21D571A91F28789F00116A16 /* YJMeituanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJMeituanUITests.m; sourceTree = "<group>"; };
 		21D571AB1F28789F00116A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21D571B71F287AF600116A16 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
-		21F4D2FC1F340DA7009031AC /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuButton.h; sourceTree = "<group>"; };
-		21F4D2FD1F340DA7009031AC /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuButton.m; sourceTree = "<group>"; };
 		21F4D3001F343AF7009031AC /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
 		21F4D3011F343AF7009031AC /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
 		21F4D3041F343B23009031AC /* NetWrok.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWrok.h; sourceTree = "<group>"; };
 		21F4D3051F343B23009031AC /* NetWrok.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWrok.m; sourceTree = "<group>"; };
+		21F4D3071F34648B009031AC /* GetUrlString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUrlString.h; sourceTree = "<group>"; };
+		21F4D3081F34648B009031AC /* GetUrlString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUrlString.m; sourceTree = "<group>"; };
+		21F4D30B1F346E07009031AC /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		21F4D30C1F346E07009031AC /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		21F4D30D1F346E07009031AC /* YJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJTabBarController.h; sourceTree = "<group>"; };
+		21F4D30E1F346E07009031AC /* YJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJTabBarController.m; sourceTree = "<group>"; };
+		21F4D3121F346E07009031AC /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuButton.h; sourceTree = "<group>"; };
+		21F4D3131F346E07009031AC /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuButton.m; sourceTree = "<group>"; };
+		21F4D3151F346E07009031AC /* HomeMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMenuCell.h; sourceTree = "<group>"; };
+		21F4D3161F346E07009031AC /* HomeMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMenuCell.m; sourceTree = "<group>"; };
+		21F4D31B1F346EC0009031AC /* YJDiscountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJDiscountModel.h; sourceTree = "<group>"; };
+		21F4D31C1F346EC0009031AC /* YJDiscountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJDiscountModel.m; sourceTree = "<group>"; };
 		6D644FD0902117AB7B73B640 /* Pods-YJMeituan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJMeituan.release.xcconfig"; path = "Pods/Target Support Files/Pods-YJMeituan/Pods-YJMeituan.release.xcconfig"; sourceTree = "<group>"; };
 		D7496DC3DCD49D1CACDCC7DE /* Pods-YJMeituan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJMeituan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YJMeituan/Pods-YJMeituan.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -4537,10 +4543,9 @@
 		217EBD291F31658800727646 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				217EBD2A1F31658800727646 /* HomeController.h */,
-				217EBD2B1F31658800727646 /* HomeController.m */,
-				217EBD2C1F31658800727646 /* YJTabBarController.h */,
-				217EBD2D1F31658800727646 /* YJTabBarController.m */,
+				21F4D30A1F346E07009031AC /* Controller */,
+				21F4D30F1F346E07009031AC /* Model */,
+				21F4D3101F346E07009031AC /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -4565,24 +4570,6 @@
 				2193BDDA1F31BF2C0025ACF3 /* MoreData.plist */,
 			);
 			path = DataPlist;
-			sourceTree = "<group>";
-		};
-		2193BDE11F31C7CB0025ACF3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				21F4D2FB1F340D91009031AC /* Button */,
-				2193BDE21F31C7CB0025ACF3 /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2193BDE21F31C7CB0025ACF3 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				2193BDE31F31C8170025ACF3 /* HomeMenuCell.h */,
-				2193BDE41F31C8170025ACF3 /* HomeMenuCell.m */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		21D571781F28789F00116A16 = {
@@ -4610,7 +4597,6 @@
 		21D571831F28789F00116A16 /* YJMeituan */ = {
 			isa = PBXGroup;
 			children = (
-				2193BDE11F31C7CB0025ACF3 /* View */,
 				2193BDD41F31BF2C0025ACF3 /* DataPlist */,
 				2193BDD01F31BE560025ACF3 /* Tool */,
 				217EBD291F31658800727646 /* Home */,
@@ -4654,18 +4640,11 @@
 			path = YJMeituanUITests;
 			sourceTree = "<group>";
 		};
-		21F4D2FB1F340D91009031AC /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				21F4D2FC1F340DA7009031AC /* MenuButton.h */,
-				21F4D2FD1F340DA7009031AC /* MenuButton.m */,
-			);
-			path = Button;
-			sourceTree = "<group>";
-		};
 		21F4D2FF1F343AF7009031AC /* common */ = {
 			isa = PBXGroup;
 			children = (
+				21F4D3071F34648B009031AC /* GetUrlString.h */,
+				21F4D3081F34648B009031AC /* GetUrlString.m */,
 				21F4D3001F343AF7009031AC /* CommonTool.h */,
 				21F4D3011F343AF7009031AC /* CommonTool.m */,
 			);
@@ -4679,6 +4658,53 @@
 				21F4D3051F343B23009031AC /* NetWrok.m */,
 			);
 			path = NetWork;
+			sourceTree = "<group>";
+		};
+		21F4D30A1F346E07009031AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21F4D30B1F346E07009031AC /* HomeController.h */,
+				21F4D30C1F346E07009031AC /* HomeController.m */,
+				21F4D30D1F346E07009031AC /* YJTabBarController.h */,
+				21F4D30E1F346E07009031AC /* YJTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		21F4D30F1F346E07009031AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21F4D31B1F346EC0009031AC /* YJDiscountModel.h */,
+				21F4D31C1F346EC0009031AC /* YJDiscountModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		21F4D3101F346E07009031AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21F4D3111F346E07009031AC /* Button */,
+				21F4D3141F346E07009031AC /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21F4D3111F346E07009031AC /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				21F4D3121F346E07009031AC /* MenuButton.h */,
+				21F4D3131F346E07009031AC /* MenuButton.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		21F4D3141F346E07009031AC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				21F4D3151F346E07009031AC /* HomeMenuCell.h */,
+				21F4D3161F346E07009031AC /* HomeMenuCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		4F3B085A27F788C154DAF2D4 /* Frameworks */ = {
@@ -6183,14 +6209,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F4D3171F346E07009031AC /* HomeController.m in Sources */,
+				21F4D31A1F346E07009031AC /* HomeMenuCell.m in Sources */,
 				21D571891F28789F00116A16 /* AppDelegate.m in Sources */,
-				2193BDE51F31C8170025ACF3 /* HomeMenuCell.m in Sources */,
 				21F4D3031F343AF7009031AC /* CommonTool.m in Sources */,
-				217EBD2F1F31658800727646 /* YJTabBarController.m in Sources */,
-				21F4D2FE1F340DA7009031AC /* MenuButton.m in Sources */,
 				21D571861F28789F00116A16 /* main.m in Sources */,
+				21F4D31D1F346EC0009031AC /* YJDiscountModel.m in Sources */,
 				21F4D3061F343B23009031AC /* NetWrok.m in Sources */,
-				217EBD2E1F31658800727646 /* HomeController.m in Sources */,
+				21F4D3091F34648B009031AC /* GetUrlString.m in Sources */,
+				21F4D3191F346E07009031AC /* MenuButton.m in Sources */,
+				21F4D3181F346E07009031AC /* YJTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
