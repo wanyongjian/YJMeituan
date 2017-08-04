@@ -9,7 +9,7 @@
 #import "HomeController.h"
 #import "HomeMenuCell.h"
 
-@interface HomeController () <UITableViewDelegate,UITableViewDataSource>
+@interface HomeController () <UITableViewDelegate,UITableViewDataSource,MenuCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableview;
 @property (nonatomic, strong) NSMutableArray *menuArray;
@@ -24,7 +24,10 @@
     
 
 }
-
+#pragma mark - menu代理方法
+- (void)menuButtonClickedAtIndex:(NSInteger)index{
+    NSLog(@"按钮点击--%ld",(long)index);
+}
 
 #pragma mark - lazyload
 
@@ -61,6 +64,8 @@
         if (!cell) {
             cell = [[HomeMenuCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:use];
             cell.dataArray = self.menuArray;
+            cell.delegate = self;
+            
         }
         
         return cell;

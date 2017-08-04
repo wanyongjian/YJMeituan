@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MenuCellDelegate <NSObject>
+
+- (void)menuButtonClickedAtIndex:(NSInteger)index;
+
+@end
+
 @interface HomeMenuCell : UITableViewCell
 
+//@property (nonatomic,copy) void(^menuClick)(UIButton *sender);
 @property (nonatomic, strong) NSMutableArray *dataArray;
+
+@property (nonatomic, weak) id<MenuCellDelegate> delegate;
 @end
