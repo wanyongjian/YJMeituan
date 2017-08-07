@@ -17,14 +17,23 @@
 #import <AFNetworking.h>
 #import "GetUrlString.h"
 #import "MJExtension.h"
+#import <UIImageView+WebCache.h>
+
 
 #define RGB(c,a) [UIColor colorWithRed:((c&0xFF0000)>>16)/255.f green:((c&0xFF00)>>8)/255.f blue:((c&0xFF))/255.f alpha:a]
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 
 #define KScreenWidth [UIScreen mainScreen].bounds.size.width
 #define KScreenHeight [UIScreen mainScreen].bounds.size.height
+#define KScreenWidth_2  ([UIScreen mainScreen].bounds.size.width/2)
+#define KScreenHeight_2 ([UIScreen mainScreen].bounds.size.height/2)
+
+#define separaterColor RGBA(200, 199, 204,1)
 #define TabbarColor RGB(0x21c0ae,1)
-
-
+#define navigationBarColor RGBA(33, 192, 174,1)
+//经纬度   这里经纬度写死的，真是开发中应该根据定位出来获取到的
+#define LATITUDE_DEFAULT 39.983497
+#define LONGITUDE_DEFAULT 116.318042
 
 
 //#define RGB(r,g,b) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1]

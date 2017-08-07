@@ -1303,6 +1303,10 @@
 		2193BDDE1F31BF2C0025ACF3 /* menuData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD81F31BF2C0025ACF3 /* menuData.plist */; };
 		2193BDDF1F31BF2C0025ACF3 /* MineInformationData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD91F31BF2C0025ACF3 /* MineInformationData.plist */; };
 		2193BDE01F31BF2C0025ACF3 /* MoreData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDDA1F31BF2C0025ACF3 /* MoreData.plist */; };
+		21B8A68B1F37EE8A002A224E /* DiscountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8A68A1F37EE8A002A224E /* DiscountCell.m */; };
+		21B8A68E1F37F826002A224E /* DiscountCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8A68D1F37F826002A224E /* DiscountCellView.m */; };
+		21B8A6911F3836C2002A224E /* YJDiscountWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8A6901F3836C2002A224E /* YJDiscountWebViewController.m */; };
+		21B8A6941F385374002A224E /* YJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B8A6931F385374002A224E /* YJNavigationController.m */; };
 		21D571861F28789F00116A16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D571851F28789F00116A16 /* main.m */; };
 		21D571891F28789F00116A16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D571881F28789F00116A16 /* AppDelegate.m */; };
 		21D5718F1F28789F00116A16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D5718D1F28789F00116A16 /* Main.storyboard */; };
@@ -2638,6 +2642,14 @@
 		2193BDD81F31BF2C0025ACF3 /* menuData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menuData.plist; sourceTree = "<group>"; };
 		2193BDD91F31BF2C0025ACF3 /* MineInformationData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MineInformationData.plist; sourceTree = "<group>"; };
 		2193BDDA1F31BF2C0025ACF3 /* MoreData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MoreData.plist; sourceTree = "<group>"; };
+		21B8A6891F37EE8A002A224E /* DiscountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountCell.h; sourceTree = "<group>"; };
+		21B8A68A1F37EE8A002A224E /* DiscountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountCell.m; sourceTree = "<group>"; };
+		21B8A68C1F37F826002A224E /* DiscountCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountCellView.h; sourceTree = "<group>"; };
+		21B8A68D1F37F826002A224E /* DiscountCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountCellView.m; sourceTree = "<group>"; };
+		21B8A68F1F3836C2002A224E /* YJDiscountWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJDiscountWebViewController.h; sourceTree = "<group>"; };
+		21B8A6901F3836C2002A224E /* YJDiscountWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJDiscountWebViewController.m; sourceTree = "<group>"; };
+		21B8A6921F385374002A224E /* YJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJNavigationController.h; sourceTree = "<group>"; };
+		21B8A6931F385374002A224E /* YJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJNavigationController.m; sourceTree = "<group>"; };
 		21D571811F28789F00116A16 /* YJMeituan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJMeituan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D571851F28789F00116A16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21D571871F28789F00116A16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -4665,8 +4677,12 @@
 			children = (
 				21F4D30B1F346E07009031AC /* HomeController.h */,
 				21F4D30C1F346E07009031AC /* HomeController.m */,
+				21B8A68F1F3836C2002A224E /* YJDiscountWebViewController.h */,
+				21B8A6901F3836C2002A224E /* YJDiscountWebViewController.m */,
 				21F4D30D1F346E07009031AC /* YJTabBarController.h */,
 				21F4D30E1F346E07009031AC /* YJTabBarController.m */,
+				21B8A6921F385374002A224E /* YJNavigationController.h */,
+				21B8A6931F385374002A224E /* YJNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4703,6 +4719,10 @@
 			children = (
 				21F4D3151F346E07009031AC /* HomeMenuCell.h */,
 				21F4D3161F346E07009031AC /* HomeMenuCell.m */,
+				21B8A6891F37EE8A002A224E /* DiscountCell.h */,
+				21B8A68A1F37EE8A002A224E /* DiscountCell.m */,
+				21B8A68C1F37F826002A224E /* DiscountCellView.h */,
+				21B8A68D1F37F826002A224E /* DiscountCellView.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -6209,15 +6229,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B8A6911F3836C2002A224E /* YJDiscountWebViewController.m in Sources */,
 				21F4D3171F346E07009031AC /* HomeController.m in Sources */,
 				21F4D31A1F346E07009031AC /* HomeMenuCell.m in Sources */,
 				21D571891F28789F00116A16 /* AppDelegate.m in Sources */,
 				21F4D3031F343AF7009031AC /* CommonTool.m in Sources */,
 				21D571861F28789F00116A16 /* main.m in Sources */,
+				21B8A6941F385374002A224E /* YJNavigationController.m in Sources */,
+				21B8A68E1F37F826002A224E /* DiscountCellView.m in Sources */,
 				21F4D31D1F346EC0009031AC /* YJDiscountModel.m in Sources */,
 				21F4D3061F343B23009031AC /* NetWrok.m in Sources */,
 				21F4D3091F34648B009031AC /* GetUrlString.m in Sources */,
 				21F4D3191F346E07009031AC /* MenuButton.m in Sources */,
+				21B8A68B1F37EE8A002A224E /* DiscountCell.m in Sources */,
 				21F4D3181F346E07009031AC /* YJTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

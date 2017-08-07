@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface CommonTool : NSObject
 
 + (NSMutableArray *)arrayFromPlist:(NSString*)name;
+
++ (UIColor *)colorFromStr:(NSString *)str;
 @end

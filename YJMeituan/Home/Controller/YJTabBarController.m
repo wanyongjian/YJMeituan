@@ -8,6 +8,7 @@
 
 #import "YJTabBarController.h"
 #import "HomeController.h"
+#import "YJNavigationController.h"
 //#define TabbarColor RGB(0x21c0ae,1)
 #define KFont [UIFont systemFontOfSize:12]
 //#define TabbarColor RGB(33,192,174)
@@ -46,7 +47,7 @@
 
 - (void)addChildViewControllerWithController:(UIViewController*)controller title:(NSString*)title imgName:(NSString *)imgName selectImgName:(NSString*)selectedImgName{
     
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:controller];
+    YJNavigationController *nav = [[YJNavigationController alloc]initWithRootViewController:controller];
     controller.title = title;
     controller.tabBarItem.image =[[UIImage imageNamed:imgName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     controller.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImgName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

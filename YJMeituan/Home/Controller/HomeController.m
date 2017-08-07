@@ -9,8 +9,10 @@
 #import "HomeController.h"
 #import "HomeMenuCell.h"
 #import "YJDiscountModel.h"
+#import "DiscountCell.h"
+#import "YJDiscountWebViewController.h"
 
-@interface HomeController () <UITableViewDelegate,UITableViewDataSource,MenuCellDelegate>
+@interface HomeController () <UITableViewDelegate,UITableViewDataSource,MenuCellDelegate,DiscountCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableview;
 @property (nonatomic, strong) NSMutableArray *menuArray;
@@ -52,11 +54,21 @@
         
     }];
 }
-#pragma mark - menu代理方法
+#pragma mark - 代理方法
 - (void)menuButtonClickedAtIndex:(NSInteger)index{
     NSLog(@"按钮点击--%ld",(long)index);
 }
 
+- (void)discountItemClicked:(NSString *)str{
+    
+    NSLog(@"-==-=   %@",str);
+    NSString *urlStr = [[GetUrlString sharedManager] urlWithDiscountWebData:str];
+    YJDiscountWebViewController *controller = [[YJDiscountWebViewController alloc] init];
+    [controller setHidesBottomBarWhenPushed:YES];
+    controller.urlStr = urlStr;
+    [self.navigationController  pushViewController:controller animated:YES];
+    
+}
 #pragma mark - lazyload
 
 - (UITableView *)tableview{
@@ -64,6 +76,7 @@
         _tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight-64) style:UITableViewStylePlain];
         _tableview.delegate = self;
         _tableview.dataSource = self;
+        _tableview.separatorInset = UIEdgeInsetsZero;
     }
     return _tableview;
 }
@@ -102,6 +115,16 @@
             
         }
         return cell;
+    }else if (indexPath.row == 2){
+        static NSString *use = @"discount";
+        DiscountCell *cell = [tableView dequeueReusableCellWithIdentifier:use];
+        if (!cell) {
+            cell = [[DiscountCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:use];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        cell.delegate = self;
+        cell.discountArray = self.discountArray;
+        return cell;
     }else{
         static NSString *use = @"menu";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:use];
@@ -114,11 +137,18 @@
   
 }
 
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    
+//}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
         return 180;
     }else if(indexPath.row == 1){
         return 120;
+    }else if(indexPath.row == 2){
+        return 160;
     }else{
         return 70;
     }

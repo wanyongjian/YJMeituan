@@ -22,6 +22,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[YJTabBarController alloc]init];
     [self.window makeKeyAndVisible];
+    
+    _latitude = LATITUDE_DEFAULT;
+    _longitude = LONGITUDE_DEFAULT;
     return YES;
 }
 
