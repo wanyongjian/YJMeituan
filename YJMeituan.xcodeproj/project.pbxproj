@@ -1323,6 +1323,7 @@
 		21F4D3191F346E07009031AC /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D3131F346E07009031AC /* MenuButton.m */; };
 		21F4D31A1F346E07009031AC /* HomeMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D3161F346E07009031AC /* HomeMenuCell.m */; };
 		21F4D31D1F346EC0009031AC /* YJDiscountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4D31C1F346EC0009031AC /* YJDiscountModel.m */; };
+		226F57191F38BCF300AFD1B6 /* YJRecommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 226F57181F38BCF300AFD1B6 /* YJRecommentModel.m */; };
 		D0FFF3D4246500063E5F65EB /* libPods-YJMeituan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CF8D70FBC55BAB4D97BA2A /* libPods-YJMeituan.a */; };
 /* End PBXBuildFile section */
 
@@ -2681,6 +2682,8 @@
 		21F4D3161F346E07009031AC /* HomeMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMenuCell.m; sourceTree = "<group>"; };
 		21F4D31B1F346EC0009031AC /* YJDiscountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJDiscountModel.h; sourceTree = "<group>"; };
 		21F4D31C1F346EC0009031AC /* YJDiscountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJDiscountModel.m; sourceTree = "<group>"; };
+		226F57171F38BCF300AFD1B6 /* YJRecommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJRecommentModel.h; sourceTree = "<group>"; };
+		226F57181F38BCF300AFD1B6 /* YJRecommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJRecommentModel.m; sourceTree = "<group>"; };
 		6D644FD0902117AB7B73B640 /* Pods-YJMeituan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJMeituan.release.xcconfig"; path = "Pods/Target Support Files/Pods-YJMeituan/Pods-YJMeituan.release.xcconfig"; sourceTree = "<group>"; };
 		D7496DC3DCD49D1CACDCC7DE /* Pods-YJMeituan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJMeituan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YJMeituan/Pods-YJMeituan.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -4692,6 +4695,8 @@
 			children = (
 				21F4D31B1F346EC0009031AC /* YJDiscountModel.h */,
 				21F4D31C1F346EC0009031AC /* YJDiscountModel.m */,
+				226F57171F38BCF300AFD1B6 /* YJRecommentModel.h */,
+				226F57181F38BCF300AFD1B6 /* YJRecommentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -6230,6 +6235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21B8A6911F3836C2002A224E /* YJDiscountWebViewController.m in Sources */,
+				226F57191F38BCF300AFD1B6 /* YJRecommentModel.m in Sources */,
 				21F4D3171F346E07009031AC /* HomeController.m in Sources */,
 				21F4D31A1F346E07009031AC /* HomeMenuCell.m in Sources */,
 				21D571891F28789F00116A16 /* AppDelegate.m in Sources */,

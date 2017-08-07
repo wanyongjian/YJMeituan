@@ -11,6 +11,7 @@
 #import "YJDiscountModel.h"
 #import "DiscountCell.h"
 #import "YJDiscountWebViewController.h"
+#import "YJRecommentModel.h"
 
 @interface HomeController () <UITableViewDelegate,UITableViewDataSource,MenuCellDelegate,DiscountCellDelegate>
 
@@ -19,6 +20,7 @@
 
 //存放数据数组
 @property (nonatomic, strong) NSMutableArray *discountArray;
+@property (nonatomic, strong) NSMutableArray *recommentArray;
 @end
 
 @implementation HomeController
@@ -50,6 +52,20 @@
         }
         
         [self.tableview reloadData];
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    //推荐
+    NSString *recommentUrl = [[GetUrlString sharedManager] urlWithRecomment];
+    [NetWrok getDataFromURL:recommentUrl paraments:nil success:^(id response) {
+        NSMutableArray *dataArray = response[@"data"];
+        NSLog(@"-=-=-==-=  %@",dataArray);
+        [self.recommentArray removeAllObjects];
+        for (NSInteger i=0; i<dataArray.count; i++) {
+            YJRecommentModel *recommentModel = [YJRecommentModel mj_objectWithKeyValues:dataArray[i]];
+            [self.recommentArray addObject:recommentModel];
+        }
     } failure:^(NSError *error) {
         
     }];
@@ -94,18 +110,25 @@
     }
     return _discountArray;
 }
+
+- (NSMutableArray *)recommentArray{
+    if (!_recommentArray) {
+        _recommentArray = [@[] mutableCopy];
+    }
+    return _recommentArray;
+}
 #pragma mark - tableview代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         static NSString *use = @"menu";
         HomeMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:use];
         if (!cell) {
@@ -115,7 +138,7 @@
             
         }
         return cell;
-    }else if (indexPath.row == 2){
+    }else if (indexPath.section == 2){
         static NSString *use = @"discount";
         DiscountCell *cell = [tableView dequeueReusableCellWithIdentifier:use];
         if (!cell) {
@@ -125,6 +148,26 @@
         cell.delegate = self;
         cell.discountArray = self.discountArray;
         return cell;
+    }else if (indexPath.section == 4){
+        if (indexPath.row == 0) {
+            static NSString *use = @"guesslike";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:use];
+            if (!cell) {
+                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:use];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            cell.textLabel.text = @"猜你喜欢";
+            return cell;
+        }else{
+            static NSString *use = @"guesslike";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:use];
+            if (!cell) {
+                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:use];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            cell.textLabel.text = @"猜你喜欢";
+            return cell;
+        }
     }else{
         static NSString *use = @"menu";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:use];
@@ -143,12 +186,19 @@
 //}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         return 180;
-    }else if(indexPath.row == 1){
+    }else if(indexPath.section == 1){
         return 120;
-    }else if(indexPath.row == 2){
+    }else if(indexPath.section == 2){
         return 160;
+    }else if(indexPath.section == 3){
+        return 50;
+    }else if(indexPath.section == 4){
+        if (indexPath.row==0) {
+            return 35;
+        }
+        return 100;
     }else{
         return 70;
     }
