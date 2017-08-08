@@ -30,14 +30,59 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self.view addSubview:self.tableview];
+    [self tableRefresh];
+}
+
+- (void)tableRefresh{
+    
+    NSMutableArray *idleImgArray = [@[] mutableCopy];
+    for (NSInteger i=1; i<=60; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"dropdown_anim__000%ld",(long)i];
+        UIImage *image = [UIImage imageNamed:imageName];
+        [idleImgArray addObject:image];
+    }
+    
+    NSMutableArray *pullImgArray = [@[] mutableCopy];
+    for (int i=1; i<=3; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"dropdown_loading_%02d",i];
+        UIImage *image = [UIImage imageNamed:imageName];
+        [pullImgArray addObject:image];
+    }
+    
+    MJRefreshGifHeader *gifHeader = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshAction)];
+    self.tableview.mj_header = gifHeader;
+    [gifHeader setImages:idleImgArray forState:MJRefreshStateIdle];
+    [gifHeader setImages:pullImgArray forState:MJRefreshStatePulling];
+    [gifHeader setImages:pullImgArray forState:MJRefreshStateRefreshing];
+    [gifHeader beginRefreshing];
+}
+
+                                     
+- (void)refreshAction{
+   
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        [self loadRushbuyData];
+        [self loadDiscountData];
+        [self loadRecommentData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        });
+    });
+}
+#pragma mark - 网络数据的获取
+- (void)loadRushbuyData{
     //抢购数据
     NSString *url = [[GetUrlString sharedManager] urlWithRushBuy];
     [NetWrok getDataFromURL:url paraments:nil success:^(id response) {
         
     } failure:^(NSError *error) {
-        
+        [self.tableview.mj_header endRefreshing];
     }];
-    
+}
+
+- (void)loadDiscountData{
     //折扣数据
     NSString *discountUrl = [[GetUrlString sharedManager] urlWithDiscount];
     [NetWrok getDataFromURL:discountUrl paraments:nil success:^(id response) {
@@ -53,9 +98,12 @@
         
         [self.tableview reloadData];
     } failure:^(NSError *error) {
-        
+        [self.tableview.mj_header endRefreshing];
     }];
-    
+}
+
+
+- (void)loadRecommentData{
     //推荐
     NSString *recommentUrl = [[GetUrlString sharedManager] urlWithRecomment];
     [NetWrok getDataFromURL:recommentUrl paraments:nil success:^(id response) {
@@ -68,8 +116,9 @@
         }
         
         [self.tableview reloadData];
+        [self.tableview.mj_header endRefreshing];
     } failure:^(NSError *error) {
-        
+        [self.tableview.mj_header endRefreshing];
     }];
 }
 #pragma mark - 代理方法
