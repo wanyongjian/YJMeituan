@@ -12,6 +12,7 @@
 #import "DiscountCell.h"
 #import "YJDiscountWebViewController.h"
 #import "YJRecommentModel.h"
+#import "YJRecommentCell.h"
 
 @interface HomeController () <UITableViewDelegate,UITableViewDataSource,MenuCellDelegate,DiscountCellDelegate>
 
@@ -29,7 +30,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self.view addSubview:self.tableview];
-    
     //抢购数据
     NSString *url = [[GetUrlString sharedManager] urlWithRushBuy];
     [NetWrok getDataFromURL:url paraments:nil success:^(id response) {
@@ -66,6 +66,8 @@
             YJRecommentModel *recommentModel = [YJRecommentModel mj_objectWithKeyValues:dataArray[i]];
             [self.recommentArray addObject:recommentModel];
         }
+        
+        [self.tableview reloadData];
     } failure:^(NSError *error) {
         
     }];
@@ -123,6 +125,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 4) {
+        return self.recommentArray.count+1;
+    }
     return 1;
 }
 
@@ -159,13 +164,13 @@
             cell.textLabel.text = @"猜你喜欢";
             return cell;
         }else{
-            static NSString *use = @"guesslike";
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:use];
+            static NSString *use = @"recomment";
+            YJRecommentCell *cell = [tableView dequeueReusableCellWithIdentifier:use];
             if (!cell) {
-                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:use];
+                cell = [[YJRecommentCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:use];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
-            cell.textLabel.text = @"猜你喜欢";
+            cell.recommentModel = self.recommentArray[indexPath.row-1];
             return cell;
         }
     }else{
@@ -180,10 +185,6 @@
   
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
