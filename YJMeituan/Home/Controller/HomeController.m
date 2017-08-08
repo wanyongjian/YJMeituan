@@ -13,6 +13,7 @@
 #import "YJDiscountWebViewController.h"
 #import "YJRecommentModel.h"
 #import "YJRecommentCell.h"
+#import "YJShopDetailController.h"
 
 @interface HomeController () <UITableViewDelegate,UITableViewDataSource,MenuCellDelegate,DiscountCellDelegate>
 
@@ -169,6 +170,16 @@
     return _recommentArray;
 }
 #pragma mark - tableview代理方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section  == 4) {
+        if (indexPath.row != 0) {
+            YJShopDetailController *controller = [[YJShopDetailController alloc]init];
+            YJRecommentModel *model = self.recommentArray[indexPath.row-1];
+            controller.shopID = model.id;
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+    }
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 5;
 }
