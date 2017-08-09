@@ -11,4 +11,5 @@
 @interface YJShopDetailController : UIViewController
 
 @property (nonatomic,strong) NSString *shopID;
+@property (nonatomic,strong) UITableView *tableView;
 @end

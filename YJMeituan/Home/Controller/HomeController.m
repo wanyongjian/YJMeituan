@@ -32,6 +32,44 @@
     // Do any additional setup after loading the view, typically from a nib.
     [self.view addSubview:self.tableview];
     [self tableRefresh];
+    [self navigationBar];
+}
+
+- (void)navigationBar{
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftButton.frame = CGRectMake(0, 0, 40, 35);
+    leftButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    [leftButton setImage:[UIImage imageNamed:@"icon_homepage_upArrow"] forState:UIControlStateNormal];
+    [leftButton setImage:[UIImage imageNamed:@"icon_homepage_downArrow"] forState:UIControlStateSelected];
+    [leftButton setTitle:@"上海" forState:UIControlStateNormal];
+//    leftButton.contentHorizontalAlignment = YES;
+    leftButton.titleEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0);
+    leftButton.imageEdgeInsets = UIEdgeInsetsMake(0, 30, 0, 0);
+    [leftButton addTarget:self action:@selector(leftBarbuttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UIButton *mapButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    mapButton.frame = CGRectMake(0, 0, 50, 35);
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:mapButton];
+    [mapButton setImage:[UIImage imageNamed:@"icon_homepage_map_old"] forState:UIControlStateNormal];
+    [mapButton addTarget:self action:@selector(rightMapbuttonClicked) forControlEvents:UIControlEventTouchUpInside];
+    
+    UISearchBar *searchBar = [[UISearchBar alloc]init];
+    searchBar.layer.cornerRadius = 15;
+    searchBar.layer.masksToBounds = YES;
+//    [searchBar setBackgroundImage:[UIImage imageNamed:@"icon_homepage_search"]];
+    self.navigationItem.titleView = searchBar;
+    searchBar.placeholder = @"点击查找";
+//    [searchBar setBackgroundImage:[self imageWithColor:[UIColor blackColor] size:CGSizeMake(KScreenWidth-100, 50)]];
+    [searchBar setSearchFieldBackgroundImage:[self imageWithColor:[UIColor redColor] size:self.navigationItem.titleView.frame.size] forState:UIControlStateNormal];
+}
+- (void)rightMapbuttonClicked{
+    
+}
+
+- (void)leftBarbuttonClicked:(UIButton *)sender{
+    sender.selected = !sender.selected;
 }
 
 - (void)tableRefresh{
@@ -180,6 +218,8 @@
         }
     }
 }
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 5;
 }
@@ -263,5 +303,33 @@
     }else{
         return 70;
     }
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
+
+{
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    
+    UIGraphicsBeginImageContext(rect.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    
+    CGContextFillRect(context, rect);
+    
+    
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    
+    
+    return image;
+    
 }
 @end
