@@ -1297,6 +1297,9 @@
 		21015AF51F3072E4002D6065 /* icon_tabbar_misc_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 210155E81F3072E3002D6065 /* icon_tabbar_misc_selected@2x.png */; };
 		21015AF61F3072E4002D6065 /* icon_tabbar_onsite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 210155E91F3072E3002D6065 /* icon_tabbar_onsite@2x.png */; };
 		21015AF71F3072E4002D6065 /* icon_tabbar_onsite_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 210155EA1F3072E3002D6065 /* icon_tabbar_onsite_selected@2x.png */; };
+		2109A2A41F3BEDC300BB8CC6 /* YJMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109A2A31F3BEDC300BB8CC6 /* YJMapController.m */; };
+		2109A2A81F3C0D6C00BB8CC6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2109A2A71F3C0D6C00BB8CC6 /* MapKit.framework */; };
+		2109A2AB1F3C491800BB8CC6 /* YJMKPointAnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109A2AA1F3C491800BB8CC6 /* YJMKPointAnotation.m */; };
 		211CA5BA1F3942480075F4D1 /* YJRecommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CA5B91F3942480075F4D1 /* YJRecommentCell.m */; };
 		211CA5BD1F399CBB0075F4D1 /* YJShopDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CA5BC1F399CBB0075F4D1 /* YJShopDetailController.m */; };
 		2193BDDB1F31BF2C0025ACF3 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD51F31BF2C0025ACF3 /* city.plist */; };
@@ -2638,6 +2641,11 @@
 		210155E81F3072E3002D6065 /* icon_tabbar_misc_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_misc_selected@2x.png"; sourceTree = "<group>"; };
 		210155E91F3072E3002D6065 /* icon_tabbar_onsite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_onsite@2x.png"; sourceTree = "<group>"; };
 		210155EA1F3072E3002D6065 /* icon_tabbar_onsite_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_onsite_selected@2x.png"; sourceTree = "<group>"; };
+		2109A2A21F3BEDC300BB8CC6 /* YJMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJMapController.h; sourceTree = "<group>"; };
+		2109A2A31F3BEDC300BB8CC6 /* YJMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJMapController.m; sourceTree = "<group>"; };
+		2109A2A71F3C0D6C00BB8CC6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2109A2A91F3C491800BB8CC6 /* YJMKPointAnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJMKPointAnotation.h; sourceTree = "<group>"; };
+		2109A2AA1F3C491800BB8CC6 /* YJMKPointAnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJMKPointAnotation.m; sourceTree = "<group>"; };
 		211CA5B81F3942480075F4D1 /* YJRecommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJRecommentCell.h; sourceTree = "<group>"; };
 		211CA5B91F3942480075F4D1 /* YJRecommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJRecommentCell.m; sourceTree = "<group>"; };
 		211CA5BB1F399CBB0075F4D1 /* YJShopDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJShopDetailController.h; sourceTree = "<group>"; };
@@ -2699,6 +2707,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2109A2A81F3C0D6C00BB8CC6 /* MapKit.framework in Frameworks */,
 				D0FFF3D4246500063E5F65EB /* libPods-YJMeituan.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4561,9 +4570,21 @@
 			path = tabbar;
 			sourceTree = "<group>";
 		};
+		2109A2A11F3BEDB200BB8CC6 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				2109A2A21F3BEDC300BB8CC6 /* YJMapController.h */,
+				2109A2A31F3BEDC300BB8CC6 /* YJMapController.m */,
+				2109A2A91F3C491800BB8CC6 /* YJMKPointAnotation.h */,
+				2109A2AA1F3C491800BB8CC6 /* YJMKPointAnotation.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		217EBD291F31658800727646 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2109A2A11F3BEDB200BB8CC6 /* Map */,
 				21F4D30A1F346E07009031AC /* Controller */,
 				21F4D30F1F346E07009031AC /* Model */,
 				21F4D3101F346E07009031AC /* View */,
@@ -4745,6 +4766,7 @@
 		4F3B085A27F788C154DAF2D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2109A2A71F3C0D6C00BB8CC6 /* MapKit.framework */,
 				03CF8D70FBC55BAB4D97BA2A /* libPods-YJMeituan.a */,
 			);
 			name = Frameworks;
@@ -4831,6 +4853,11 @@
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = C7G78L37X3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					21D571991F28789F00116A16 = {
 						CreatedOnToolsVersion = 8.3.1;
@@ -6260,7 +6287,9 @@
 				21F4D3091F34648B009031AC /* GetUrlString.m in Sources */,
 				21F4D3191F346E07009031AC /* MenuButton.m in Sources */,
 				21B8A68B1F37EE8A002A224E /* DiscountCell.m in Sources */,
+				2109A2AB1F3C491800BB8CC6 /* YJMKPointAnotation.m in Sources */,
 				21F4D3181F346E07009031AC /* YJTabBarController.m in Sources */,
+				2109A2A41F3BEDC300BB8CC6 /* YJMapController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

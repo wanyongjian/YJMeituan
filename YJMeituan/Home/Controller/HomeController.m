@@ -14,6 +14,7 @@
 #import "YJRecommentModel.h"
 #import "YJRecommentCell.h"
 #import "YJShopDetailController.h"
+#import "YJMapController.h"
 
 @interface HomeController () <UITableViewDelegate,UITableViewDataSource,MenuCellDelegate,DiscountCellDelegate>
 
@@ -54,18 +55,17 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:mapButton];
     [mapButton setImage:[UIImage imageNamed:@"icon_homepage_map_old"] forState:UIControlStateNormal];
     [mapButton addTarget:self action:@selector(rightMapbuttonClicked) forControlEvents:UIControlEventTouchUpInside];
-    
     UISearchBar *searchBar = [[UISearchBar alloc]init];
     searchBar.layer.cornerRadius = 15;
     searchBar.layer.masksToBounds = YES;
 //    [searchBar setBackgroundImage:[UIImage imageNamed:@"icon_homepage_search"]];
     self.navigationItem.titleView = searchBar;
     searchBar.placeholder = @"点击查找";
-//    [searchBar setBackgroundImage:[self imageWithColor:[UIColor blackColor] size:CGSizeMake(KScreenWidth-100, 50)]];
-    [searchBar setSearchFieldBackgroundImage:[self imageWithColor:[UIColor redColor] size:self.navigationItem.titleView.frame.size] forState:UIControlStateNormal];
 }
+
 - (void)rightMapbuttonClicked{
-    
+    YJMapController *mapcontroller = [[YJMapController alloc] init];
+    [self presentViewController:mapcontroller animated:YES completion:nil];
 }
 
 - (void)leftBarbuttonClicked:(UIButton *)sender{

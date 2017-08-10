@@ -12,9 +12,11 @@
 
 #import "AppDelegate.h"
 #import "YJTabBarController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <CLLocationManagerDelegate>
 
+@property (strong,nonatomic) CLLocationManager *locationManager;
 @end
 
 @implementation AppDelegate
@@ -27,11 +29,59 @@
     self.window.rootViewController = [[YJTabBarController alloc]init];
     [self.window makeKeyAndVisible];
     
-    _latitude = LATITUDE_DEFAULT;
-    _longitude = LONGITUDE_DEFAULT;
+//    _latitude = LATITUDE_DEFAULT;
+//    _longitude = LONGITUDE_DEFAULT;
+    
+    if ([CLLocationManager locationServicesEnabled]) {
+        self.locationManager = [[CLLocationManager alloc]init];
+        self.locationManager.distanceFilter = 500;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.delegate = self;
+        
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        [self.locationManager startUpdatingLocation];
+    }else{
+        NSLog(@"请开启定位服务");
+    }
+    
     return YES;
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    CLLocation *location = locations.firstObject;
+//    location.coordinate
+    self.latitude = location.coordinate.latitude;
+    self.longitude = location.coordinate.longitude;
+    [self.locationManager stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    switch (status) {
+        case kCLAuthorizationStatusNotDetermined:
+            NSLog(@"还没决定");
+            break;
+            
+        case kCLAuthorizationStatusDenied:
+            NSLog(@"用户拒绝");
+            break;
+            
+        case kCLAuthorizationStatusAuthorizedAlways:
+            NSLog(@"允许后台");
+            break;
+            
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            NSLog(@"仅限使用中");
+            break;
+        default:
+            break;
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
