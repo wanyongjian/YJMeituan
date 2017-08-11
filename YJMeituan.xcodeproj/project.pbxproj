@@ -1302,6 +1302,7 @@
 		2109A2AB1F3C491800BB8CC6 /* YJMKPointAnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109A2AA1F3C491800BB8CC6 /* YJMKPointAnotation.m */; };
 		211CA5BA1F3942480075F4D1 /* YJRecommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CA5B91F3942480075F4D1 /* YJRecommentCell.m */; };
 		211CA5BD1F399CBB0075F4D1 /* YJShopDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CA5BC1F399CBB0075F4D1 /* YJShopDetailController.m */; };
+		217822D61F3D754500DFFAB9 /* YJInnotationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 217822D51F3D754500DFFAB9 /* YJInnotationModel.m */; };
 		2193BDDB1F31BF2C0025ACF3 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD51F31BF2C0025ACF3 /* city.plist */; };
 		2193BDDC1F31BF2C0025ACF3 /* citydata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD61F31BF2C0025ACF3 /* citydata.plist */; };
 		2193BDDD1F31BF2C0025ACF3 /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD71F31BF2C0025ACF3 /* citydict.plist */; };
@@ -2650,6 +2651,8 @@
 		211CA5B91F3942480075F4D1 /* YJRecommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJRecommentCell.m; sourceTree = "<group>"; };
 		211CA5BB1F399CBB0075F4D1 /* YJShopDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJShopDetailController.h; sourceTree = "<group>"; };
 		211CA5BC1F399CBB0075F4D1 /* YJShopDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJShopDetailController.m; sourceTree = "<group>"; };
+		217822D41F3D754500DFFAB9 /* YJInnotationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJInnotationModel.h; sourceTree = "<group>"; };
+		217822D51F3D754500DFFAB9 /* YJInnotationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJInnotationModel.m; sourceTree = "<group>"; };
 		217EBD281F31571700727646 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2193BDD51F31BF2C0025ACF3 /* city.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = city.plist; sourceTree = "<group>"; };
 		2193BDD61F31BF2C0025ACF3 /* citydata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydata.plist; sourceTree = "<group>"; };
@@ -4577,6 +4580,8 @@
 				2109A2A31F3BEDC300BB8CC6 /* YJMapController.m */,
 				2109A2A91F3C491800BB8CC6 /* YJMKPointAnotation.h */,
 				2109A2AA1F3C491800BB8CC6 /* YJMKPointAnotation.m */,
+				217822D41F3D754500DFFAB9 /* YJInnotationModel.h */,
+				217822D51F3D754500DFFAB9 /* YJInnotationModel.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -4851,7 +4856,7 @@
 				TargetAttributes = {
 					21D571801F28789F00116A16 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = C7G78L37X3;
+						DevelopmentTeam = L2QMMRR2HG;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -6284,6 +6289,7 @@
 				211CA5BD1F399CBB0075F4D1 /* YJShopDetailController.m in Sources */,
 				21F4D31D1F346EC0009031AC /* YJDiscountModel.m in Sources */,
 				21F4D3061F343B23009031AC /* NetWrok.m in Sources */,
+				217822D61F3D754500DFFAB9 /* YJInnotationModel.m in Sources */,
 				21F4D3091F34648B009031AC /* GetUrlString.m in Sources */,
 				21F4D3191F346E07009031AC /* MenuButton.m in Sources */,
 				21B8A68B1F37EE8A002A224E /* DiscountCell.m in Sources */,
@@ -6447,7 +6453,7 @@
 			baseConfigurationReference = D7496DC3DCD49D1CACDCC7DE /* Pods-YJMeituan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = C7G78L37X3;
+				DEVELOPMENT_TEAM = L2QMMRR2HG;
 				GCC_PREFIX_HEADER = YJMeituan/PrefixHeader.pch;
 				INFOPLIST_FILE = YJMeituan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6455,7 +6461,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YJMeituan/Resource/BaiduMap_IOSSDK_v2.6.0_Lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ecovacs.ecosphere;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.wan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -6465,7 +6471,7 @@
 			baseConfigurationReference = 6D644FD0902117AB7B73B640 /* Pods-YJMeituan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = C7G78L37X3;
+				DEVELOPMENT_TEAM = L2QMMRR2HG;
 				GCC_PREFIX_HEADER = YJMeituan/PrefixHeader.pch;
 				INFOPLIST_FILE = YJMeituan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -6473,7 +6479,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/YJMeituan/Resource/BaiduMap_IOSSDK_v2.6.0_Lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ecovacs.ecosphere;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.wan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

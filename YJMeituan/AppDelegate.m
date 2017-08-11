@@ -14,7 +14,12 @@
 #import "YJTabBarController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate () <CLLocationManagerDelegate>
+
+
+
+@interface AppDelegate () <CLLocationManagerDelegate>{
+    BMKMapManager* _mapManager;
+}
 
 @property (strong,nonatomic) CLLocationManager *locationManager;
 @end
@@ -44,6 +49,14 @@
         [self.locationManager startUpdatingLocation];
     }else{
         NSLog(@"请开启定位服务");
+    }
+    
+    //百度地图引擎启动
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:@"ZG2OtDO4RVZAlMCDdbCOA7sExMbcxXIH"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
     }
     
     return YES;
