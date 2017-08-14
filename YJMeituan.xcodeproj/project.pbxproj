@@ -1302,6 +1302,7 @@
 		2109A2AB1F3C491800BB8CC6 /* YJMKPointAnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109A2AA1F3C491800BB8CC6 /* YJMKPointAnotation.m */; };
 		211CA5BA1F3942480075F4D1 /* YJRecommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CA5B91F3942480075F4D1 /* YJRecommentCell.m */; };
 		211CA5BD1F399CBB0075F4D1 /* YJShopDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211CA5BC1F399CBB0075F4D1 /* YJShopDetailController.m */; };
+		2173F3BA1F414F290092A877 /* YJAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2173F3B91F414F290092A877 /* YJAnnotationView.m */; };
 		217822D61F3D754500DFFAB9 /* YJInnotationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 217822D51F3D754500DFFAB9 /* YJInnotationModel.m */; };
 		2193BDDB1F31BF2C0025ACF3 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD51F31BF2C0025ACF3 /* city.plist */; };
 		2193BDDC1F31BF2C0025ACF3 /* citydata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2193BDD61F31BF2C0025ACF3 /* citydata.plist */; };
@@ -2651,6 +2652,8 @@
 		211CA5B91F3942480075F4D1 /* YJRecommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJRecommentCell.m; sourceTree = "<group>"; };
 		211CA5BB1F399CBB0075F4D1 /* YJShopDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJShopDetailController.h; sourceTree = "<group>"; };
 		211CA5BC1F399CBB0075F4D1 /* YJShopDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJShopDetailController.m; sourceTree = "<group>"; };
+		2173F3B81F414F290092A877 /* YJAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJAnnotationView.h; sourceTree = "<group>"; };
+		2173F3B91F414F290092A877 /* YJAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJAnnotationView.m; sourceTree = "<group>"; };
 		217822D41F3D754500DFFAB9 /* YJInnotationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJInnotationModel.h; sourceTree = "<group>"; };
 		217822D51F3D754500DFFAB9 /* YJInnotationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJInnotationModel.m; sourceTree = "<group>"; };
 		217EBD281F31571700727646 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -4580,6 +4583,8 @@
 				2109A2A31F3BEDC300BB8CC6 /* YJMapController.m */,
 				2109A2A91F3C491800BB8CC6 /* YJMKPointAnotation.h */,
 				2109A2AA1F3C491800BB8CC6 /* YJMKPointAnotation.m */,
+				2173F3B81F414F290092A877 /* YJAnnotationView.h */,
+				2173F3B91F414F290092A877 /* YJAnnotationView.m */,
 				217822D41F3D754500DFFAB9 /* YJInnotationModel.h */,
 				217822D51F3D754500DFFAB9 /* YJInnotationModel.m */,
 			);
@@ -6287,6 +6292,7 @@
 				21B8A68E1F37F826002A224E /* DiscountCellView.m in Sources */,
 				211CA5BA1F3942480075F4D1 /* YJRecommentCell.m in Sources */,
 				211CA5BD1F399CBB0075F4D1 /* YJShopDetailController.m in Sources */,
+				2173F3BA1F414F290092A877 /* YJAnnotationView.m in Sources */,
 				21F4D31D1F346EC0009031AC /* YJDiscountModel.m in Sources */,
 				21F4D3061F343B23009031AC /* NetWrok.m in Sources */,
 				217822D61F3D754500DFFAB9 /* YJInnotationModel.m in Sources */,

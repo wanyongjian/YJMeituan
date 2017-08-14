@@ -10,10 +10,14 @@
 #import <MapKit/MapKit.h>
 #import "AppDelegate.h"
 #import "YJInnotationModel.h"
+#import "YJMKPointAnotation.h"
+#import "YJAnnotationView.h"
+
 @interface YJMapController () <BMKMapViewDelegate,BMKLocationServiceDelegate>
 {
     BMKMapView *_bmapView;
     BMKLocationService *_locationService;
+    
 }
 
 @property (nonatomic,strong) UIButton *backButton;
@@ -38,7 +42,6 @@
     [self.view addSubview:self.backButton];
     
 //    _bmapView.showsUserLocation = YES;
-    
     [self mapInnotationData];
 }
 
@@ -53,18 +56,19 @@
             
            
             YJInnotationModel *innotationModel = [YJInnotationModel mj_objectWithKeyValues:array[i]];
-            [self.innotationArray addObject:innotationModel];
-            NSMutableArray *addrArray = innotationModel.rdplocs;
             
-            for (NSInteger i=0; i<addrArray.count; i++) {
-                BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc]init];
-                annotation.title = innotationModel.mname;
-                annotation.subtitle = innotationModel.price;
-                NSDictionary *dict = addrArray[i];
+            
+            YJMKPointAnotation *annotation = [[YJMKPointAnotation alloc]init];
+            annotation.annotationModel = innotationModel;
+            annotation.title = innotationModel.mname;
+            annotation.subtitle = innotationModel.price;
+            
+            if (innotationModel.rdplocs.count >0) {
+                NSDictionary *dict = innotationModel.rdplocs[0];
                 annotation.coordinate = CLLocationCoordinate2DMake([dict[@"lat"] doubleValue], [dict[@"lng"] doubleValue]);
-                [_bmapView addAnnotation:annotation];
             }
-           
+            [_bmapView addAnnotation:annotation];
+            [self.innotationArray addObject:annotation];
         }
         
     } failure:^(NSError *error) {
@@ -104,16 +108,17 @@
 }
 
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation{
-    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
-        BMKPinAnnotationView *annotationView = [[BMKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"myAnnotation"];
-        annotationView.pinColor = BMKPinAnnotationColorGreen;
-        annotationView.animatesDrop = YES;
-        annotationView.image = [UIImage imageNamed:@"icon_map_cateid_1"];
+    if ([annotation isKindOfClass:[YJMKPointAnotation class]]) {
+        YJMKPointAnotation *YJAnnotation = (YJMKPointAnotation *)annotation;
         
-        //左边图片
-        UIImageView *leftCalloutImg = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-                return annotationView;
+        YJAnnotationView *annotationView = (YJAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"myAnnotation"];
+        if (!annotationView) {
+            annotationView = [[YJAnnotationView alloc]initWithAnnotation:YJAnnotation reuseIdentifier:@"myAnnotation"];
+        }
         
+        annotationView.annotationModel = YJAnnotation.annotationModel;
+        
+        return annotationView;
     }
     return nil;
 }
@@ -122,7 +127,7 @@
     [_bmapView viewWillAppear];
     _bmapView.delegate = self;
     
-    [self addAnnotation];
+//    [self addAnnotation];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

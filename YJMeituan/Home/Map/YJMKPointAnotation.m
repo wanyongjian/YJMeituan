@@ -11,4 +11,7 @@
 @implementation YJMKPointAnotation
 
 
+- (void)setAnnotationModel:(YJInnotationModel *)annotationModel{
+    _annotationModel = annotationModel;
+}
 @end
